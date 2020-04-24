@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="author">The Guardian</string>
+
+    <string name="no_Internet">No Internet Connection.</string>
+    <string name="no_news">No News found.</string>
+
+</resources>
