@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     private TextView mEmptyStateTextView;
     private EventAdapter mAdapter;
     private static final int LOADER_ID = 1;
-    private static final String REQUEST_URL_1 = "http://content.guardianapis.com/search?q=debates&api-key=test\n";
-    private static final String REQUEST_URL_2 = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01&api-key=test\n";
+    private static final String REQUEST_URL_1 = "https://content.guardianapis.com/search?q=debates&api-key=test";
+    private static final String REQUEST_URL_2 = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01&api-key=test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
