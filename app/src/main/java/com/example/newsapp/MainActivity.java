@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     private EventAdapter mAdapter;
     private static final int LOADER_ID = 1;
     private static final String REQUEST_URL_1 = "https://content.guardianapis.com/search?q=debates&api-key=test";
-    private static final String REQUEST_URL_2 = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01&api-key=test";
+    private static final String REQUEST_URL_2 = "https://content.guardianapis.com/search?&tag=politics/politics&from-date=2014-01-01&api-key=test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +74,16 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     @NonNull
     @Override
     public Loader<List<Event>> onCreateLoader(int id, Bundle args) {
-        return new NewsLoader(MainActivity.this, REQUEST_URL_1, REQUEST_URL_2);
+
+        Uri baseUri_1 = Uri.parse(REQUEST_URL_1);
+        Uri.Builder uriBuilder_1 = baseUri_1.buildUpon();
+        uriBuilder_1.appendQueryParameter("show-tags", "contributor");
+
+        Uri baseUri_2 = Uri.parse(REQUEST_URL_2);
+        Uri.Builder uriBuilder_2 = baseUri_2.buildUpon();
+        uriBuilder_2.appendQueryParameter("show-tags", "contributor");
+
+        return new NewsLoader(MainActivity.this, uriBuilder_1.toString(), uriBuilder_2.toString());
     }
 
     @Override

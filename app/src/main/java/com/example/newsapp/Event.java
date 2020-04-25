@@ -6,13 +6,15 @@ public class Event {
     private String mDate;
     private String mTime;
     private String mUrl;
+    private String mAuthor;
 
-    public Event(String section, String name, String date, String time, String url) {
+    public Event(String section, String name, String date, String time, String url, String author) {
         mSection = section;
         mTitle = name;
         mDate = date;
         mTime = time;
         mUrl = url;
+        mAuthor = author;
     }
 
     public String getSection() {
@@ -27,11 +29,9 @@ public class Event {
         return mDate;
     }
 
-    public String getTime() {
-        return mTime;
-    }
+    public String getTime() { return mTime; }
 
-    public String getURL() {
-        return mUrl;
-    }
+    public String getURL() { return mUrl; }
+
+    public String getAuthor() { return mAuthor; }
 }

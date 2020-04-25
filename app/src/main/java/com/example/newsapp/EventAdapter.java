@@ -5,9 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -33,12 +36,14 @@ class EventAdapter extends ArrayAdapter<Event> {
         TextView section = listItemView.findViewById(R.id.section_text);
         TextView date = listItemView.findViewById(R.id.date_text);
         TextView time = listItemView.findViewById(R.id.time_text);
+        TextView author = listItemView.findViewById(R.id.author_text);
 
         assert currentEvent != null;
         title.setText(currentEvent.getTitle());
         section.setText(currentEvent.getSection());
         date.setText(currentEvent.getDate());
         time.setText(currentEvent.getTime());
+        author.setText(currentEvent.getAuthor());
 
         return listItemView;
     }

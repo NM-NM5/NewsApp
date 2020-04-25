@@ -71,6 +71,13 @@ public class QueryUtils {
                 String webTitle = currentEvent.getString("webTitle");
                 //getting sectionName
                 String sectionName = currentEvent.getString("sectionName");
+                //getting author name
+                String author = "The Guardian";
+                JSONArray tagsArray = currentEvent.getJSONArray("tags");
+                if (tagsArray.length() != 0) {
+                    JSONObject tagsObject = tagsArray.getJSONObject(0);
+                    author = tagsObject.getString("webTitle");
+                }
                 //getting webPublicationDate
                 String webPublicationDate = currentEvent.getString("webPublicationDate");
                 String date = "0000 - 00 - 00";
@@ -82,7 +89,7 @@ public class QueryUtils {
                 }
 
                 // Make Quake Of the Strings And Assigning it to earthquakes ArrayList<Quake>
-                Event quake = new Event(sectionName, webTitle, date, time, webUrl);
+                Event quake = new Event(sectionName, webTitle, date, time, webUrl, author);
                 news.add(quake);
             }
             // reading required data from array of first link
@@ -95,6 +102,13 @@ public class QueryUtils {
                 String webTitle = currentEvent.getString("webTitle");
                 //getting sectionName
                 String sectionName = currentEvent.getString("sectionName");
+                //getting author name
+                String author = "The Guardian";
+                JSONArray tagsArray = currentEvent.getJSONArray("tags");
+                if (tagsArray.length() != 0) {
+                    JSONObject tagsObject = tagsArray.getJSONObject(0);
+                    author = tagsObject.getString("webTitle");
+                }
                 //getting webPublicationDate
                 String webPublicationDate = currentEvent.getString("webPublicationDate");
                 String date = "0000 - 00 - 00";
@@ -106,7 +120,7 @@ public class QueryUtils {
                 }
 
                 // Make Quake Of the Strings And Assigning it to earthquakes ArrayList<Quake>
-                Event quake = new Event(sectionName, webTitle, date, time, webUrl);
+                Event quake = new Event(sectionName, webTitle, date, time, webUrl, author);
                 news.add(quake);
             }
 
